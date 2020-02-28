@@ -6,11 +6,7 @@ import { Search } from "../shared/search.model";
   templateUrl: "./search-box.component.html",
   styleUrls: ["./search-box.component.scss"]
 })
-export class SearchBoxComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-
+export class SearchBoxComponent {
   title = "Search...";
   searchTerm: string = "";
   @Output() searchFired = new EventEmitter<Search>();

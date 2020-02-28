@@ -372,12 +372,11 @@
 
   <app-search-box (searchFired)="doSearch($event)"></app-search-box>
 
-  <ul>
-    <li *ngFor="let book of books | searchFilter: searchTitle">
-      {{ book.originalTitle }}
-      <img [src]="book.smallImageUrl" [alt]="book.originalTitle" />
-    </li>
-  </ul>
+  <app-book-table
+    [books]="books | searchFilter: searchTitle"
+    (deletedBook)="deleteBook($event)"
+  >
+  </app-book-table>
 
   <svg
     id="clouds"
